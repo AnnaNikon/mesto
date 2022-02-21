@@ -1,0 +1,9 @@
+.elements__item {
+  display: flex;
+  flex-direction: column;
+  min-height: 362px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+}

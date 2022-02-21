@@ -1,0 +1,13 @@
+.popup__form {
+  margin: 75px 0 0;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 238px;
+}
+@media screen and (min-width: 880px) {
+  .popup__form {
+    margin-top: 54px;
+  }
+}
