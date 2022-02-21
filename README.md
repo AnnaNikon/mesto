@@ -20,4 +20,4 @@
 * Java Script;
 * Методология БЭМ;
 
-*Ссылка на проект* : []
+*Ссылка на проект* : [https://annanikon.github.io/mesto/]
