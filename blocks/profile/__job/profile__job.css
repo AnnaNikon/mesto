@@ -6,11 +6,16 @@
   text-align: center;
   color: #FFFFFF;
   margin: 14px 0 36px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 282px;
 }
 @media screen and (min-width: 880px) {
   .profile__job {
     font-size: 18px;
     margin: 0;
     margin-top: 16px;
+    max-width: 336px;
   }
 }

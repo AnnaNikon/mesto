@@ -13,6 +13,7 @@
   padding: 0;
   margin: 45px 0 25px;
   align-self: center;
+  cursor: pointer;
 }
 .popup__submit-button:hover {
   opacity: 0.8;
