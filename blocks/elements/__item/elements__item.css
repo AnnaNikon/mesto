@@ -7,4 +7,5 @@
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  max-height: 361px;
 }
