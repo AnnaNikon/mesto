@@ -66,8 +66,8 @@ function createElementsCard(element) {
 };
 function renderInitialCards(element) {
   initialCards.forEach(function(element) {
-   const elementsCards = createElementsCard(element);
-    elements.append(elementsCards);
+   const card = createElementsCard(element);
+    elements.append(card);
   });
 }
 
@@ -99,15 +99,10 @@ function openPopupElementsImage (evt) {
 
 
 function openPopup (element) {
-  if(element.classList.contains('popup')) {
     element.classList.add('popup_opened');
-  }
-
 }
  function closePopup (element) {
-   if(element.classList.contains('popup_opened')) {
     element.classList.remove('popup_opened');
-   }
 }
 
 function openPopupProfile () {
@@ -129,9 +124,9 @@ function handleCardSubmit(evt) {
   const link = placeLinkInput.value;
   const cardData = {name, link};
   renderElementsCard(cardData);
-  placeNameInput.value = placeNameInput.placeholder;
-  placeLinkInput.value = placeLinkInput.placeholder;
   closePopup(popupElementsEdit);
+  placeNameInput.value = '';
+  placeLinkInput.value = '';
 };
 
 function openPopupElementsEdit () {
