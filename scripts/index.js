@@ -8,9 +8,8 @@ const popupCloseButtonElement = document.querySelector('.close-button');
 const popupCloseButtons = document.querySelectorAll('.close-button');
 const popupEditButtonElement = document.querySelector('.profile__edit-button');
 const profileAddButtonElement = document.querySelector('.profile__add-button');
-const formElement = document.querySelector('.popup__form');
-const nameInput = formElement.querySelector('.popup__input_el_name');
-const jobInput = formElement.querySelector('.popup__input_el_job');
+const nameInput = document.querySelector('.popup__input_el_name');
+const jobInput = document.querySelector('.popup__input_el_job');
 const formElementsEdit = document.querySelector('.popup__form_elements-edit');
 const placeNameInput = document.querySelector('.popup__input_el_place-name');
 const placeLinkInput = document.querySelector('.popup__input_el_place-link');
@@ -112,7 +111,6 @@ function openPopupProfile () {
 
 }
 function submitProfileForm (evt) {
-  evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
   closePopup(popupProfile);
@@ -133,7 +131,24 @@ function openPopupElementsEdit () {
   openPopup(popupElementsEdit);
 };
 
-formElement.addEventListener('submit', submitProfileForm);
+const handleKeyEvent  = (evt) => {
+  if (evt.key === "Escape") {
+    popupElements.forEach((popupElement) => {
+      closePopup(popupElement);
+    });
+  };
+}
+const closePopupByClickOnOverlay = (evt) => {
+  if (evt.target !== evt.currentTarget) {
+    return;
+  };
+  popupElements.forEach((popupElement) => {
+  closePopup(popupElement);
+  });
+};
+
+
+popupProfile.addEventListener('submit', submitProfileForm);
 formElementsEdit.addEventListener('submit', handleCardSubmit);
 popupEditButtonElement.addEventListener('click', openPopupProfile);
 profileAddButtonElement.addEventListener('click', openPopupElementsEdit);
@@ -143,7 +158,7 @@ popupCloseButtons.forEach((popupCloseButtonElement) => {
     closePopup(popupOpened);
    });
 });
-
-
-
-
+document.addEventListener('keydown', handleKeyEvent);
+popupElements.forEach((popupElement) => {
+  popupElement.addEventListener('click', closePopupByClickOnOverlay);
+});

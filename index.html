@@ -32,9 +32,11 @@
     <div class="popup__container">
       <button type="button" class="close-button"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form name="popupForm" class="popup__form">
-        <input type="text" name="name" value="Жак-Ив Кусто" class="popup__input popup__input_el_name" >
-        <input type="text" name="job" value="Исследователь океана" class="popup__input popup__input_el_job">
+      <form name="popupForm" class="popup__form" novalidate>
+        <input type="text" name="name" id="name-input" value="Жак-Ив Кусто" class="popup__input popup__input_el_name" required minlength="2" maxlength="40">
+        <span class="name-input-error popup__input-error"></span>
+        <input type="text" name="job" id="job-input" value="Исследователь океана" class="popup__input popup__input_el_job" required minlength="2" maxlength="200">
+        <span class="job-input-error popup__input-error"></span>
         <button type="submit" class="popup__submit-button">Сохранить</button>
       </form>
     </div>
@@ -43,9 +45,11 @@
     <div class="popup__container">
       <button type="button" class="close-button"></button>
       <h2 class="popup__title">Новое место</h2>
-      <form name="popupForm" class="popup__form popup__form_elements-edit">
-        <input type="text" name="place-name" placeholder = "Новое место" value="" class="popup__input popup__input_el_place-name" >
-        <input type="text" name="place-link" placeholder = "Ссылка на картинку" value="" class="popup__input popup__input_el_place-link">
+      <form name="popupForm" class="popup__form popup__form_elements-edit" novalidate>
+        <input type="text" name="place-name" id="place-name-input" value="" placeholder = "Новое место" class="popup__input popup__input_el_place-name"  minlength="2" maxlength="30" required>
+        <span class="place-name-input-error popup__input-error"></span>
+        <input type="url" name="place-link" id="place-link-input" value="" placeholder = "Ссылка на картинку" class="popup__input popup__input_el_place-link" required>
+        <span class="place-link-input-error popup__input-error"></span>
         <button type="submit" class="popup__submit-button">Создать</button>
       </form>
     </div>
@@ -71,5 +75,6 @@
     </div>
   </template>
   <script src="./scripts/index.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
 </html>
