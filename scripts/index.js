@@ -126,10 +126,7 @@ formElementsEdit.addEventListener('submit', handleCardSubmit);
 popupEditButtonElement.addEventListener('click', openPopupProfile);
 profileAddButtonElement.addEventListener('click', openPopupElementsEdit);
 popupCloseButtons.forEach((popupCloseButtonElement) => {
-  popupCloseButtonElement.addEventListener('click', function(evt) {
-    const popupOpened =  evt.target.closest('.popup_opened');
-    closePopup(popupOpened);
-   });
+  popupCloseButtonElement.addEventListener('click', closeOpenedPopup)
 });
 popupElements.forEach((popupElement) => {
   popupElement.addEventListener('mousedown', closePopupByClickOnOverlay);
