@@ -6,6 +6,7 @@ export class Card {
     this._title = title;
     this._template = template;
   }
+
   _getTemplate() {
     const cardTemplate = document
     .querySelector('.elements__template')
@@ -15,12 +16,15 @@ export class Card {
 
   return cardTemplate;
   }
+
   _likeElementsItem() {
      this._view.querySelector('.elements__like-button').classList.toggle('elements__like-button_active');
   }
+
   _deleteElementsItem() {
-    this._view.remove();
+    this._element = null;
   }
+
   _openPopupElementsImage() {
     elementsImagePopupImage.src = this._image;
     elementsImagePopupTitle.textContent = this._title;
