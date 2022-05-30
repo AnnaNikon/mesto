@@ -22,6 +22,7 @@ export class Card {
   }
 
   _deleteElementsItem() {
+    this._view.remove();
     this._element = null;
   }
 
